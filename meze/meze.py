@@ -192,7 +192,7 @@ class Meze(object):
                      confoverrides={}, status=status, warning=warning,
                      freshenv=False, warningiserror=False, tags=[])
 
-        rst = os.path.join(workdir, 'index' + app.config.source_suffix)
+        rst = os.path.join(workdir, 'index' + app.config.source_suffix[0])
         with codecs.open(rst, encoding='utf-8', mode='w') as out:
             out.write(self._source)
 
