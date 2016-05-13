@@ -9,7 +9,7 @@ from mezzanine.pages.models import RichTextPage
 from .meze import rst2html
 
 blog_fieldsets = deepcopy(BlogPostAdmin.fieldsets)
-blog_fieldsets[0][1]["fields"].insert(-2, "source")
+blog_fieldsets[0][1]["fields"].insert(-2, "source")o
 blog_fieldsets[0][1]["fields"].insert(-2, "convert")
 
 ADMIN_CSS = {'all': ('meze/css/meze_admin.css', 'meze/css/pygments.css')}
@@ -42,7 +42,8 @@ class MezeForm(forms.ModelForm):
                     old_source = None
                     if 'instance' in kwargs:
                         obj = kwargs['instance']
-                        old_source = obj.source
+                        if obj:
+                            old_source = obj.source
 
                     if source != old_source:
                         (data['content'],
