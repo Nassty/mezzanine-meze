@@ -56,7 +56,7 @@ class BlogPostForm(MezeForm):
     root = "blog"
 
     class Meta:
-
+        exclude = []
         model = BlogPost
 
 
@@ -84,7 +84,7 @@ class RichTextForm(MezeForm, PageAdminForm):
     root = ""
 
     class Meta:
-
+        exclude = []
         model = RichTextPage
 
 
